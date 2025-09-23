@@ -10,3 +10,10 @@
 9 verbose logfile logs-max:10 dir:C:\Users\hp\Desktop\Web-dev\MyProject\Chat-App\backend\UsershpAppDataLocalTempnpm-cache\_logs\2025-09-23T20_34_53_216Z-
 10 verbose logfile C:\Users\hp\Desktop\Web-dev\MyProject\Chat-App\backend\UsershpAppDataLocalTempnpm-cache\_logs\2025-09-23T20_34_53_216Z-debug-0.log
 11 silly logfile done cleaning log files
+12 verbose cwd C:\Users\hp\Desktop\Web-dev\MyProject\Chat-App\backend
+13 verbose os Windows_NT 10.0.26100
+14 verbose node v22.16.0
+15 verbose npm  v11.5.1
+16 verbose exit 1
+17 verbose code 1
+18 error A complete log of this run can be found in: C:\Users\hp\Desktop\Web-dev\MyProject\Chat-App\backend\UsershpAppDataLocalTempnpm-cache\_logs\2025-09-23T20_34_53_216Z-debug-0.log
