@@ -3,6 +3,7 @@ import User from "../models/user.model.js";
 import { generateToken } from "../lib/utils.js";
 import cloudinary from "../lib/cloudinary.js";
 
+// Register new user
 export const signup = async (req, res) => {
   const { fullName, email, password } = req.body;
   try {
@@ -46,6 +47,8 @@ export const signup = async (req, res) => {
   }
 };
 
+///////////////////////////////////////////////
+// Login user
 export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -72,6 +75,8 @@ export const login = async (req, res) => {
   }
 };
 
+///////////////////////////////////////////////
+// Logout user
 export const logout = (req, res) => {
   try {
     res.cookie("jwt", "", { maxAge: 0 });
@@ -82,6 +87,8 @@ export const logout = (req, res) => {
   }
 };
 
+///////////////////////////////////////////////
+// Update user profile
 export const updateProfile = async (req, res) => {
   try {
     const { profilePic } = req.body;
@@ -105,6 +112,8 @@ export const updateProfile = async (req, res) => {
   }
 };
 
+///////////////////////////////////////////////
+// Check user authentication
 export const checkAuth = (req, res) => {
   try {
     res.status(200).json(req.user);
