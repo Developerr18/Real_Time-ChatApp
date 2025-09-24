@@ -9,6 +9,7 @@ import {
   MessageSquare,
   User,
 } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import AuthImagePattern from "../components/AuthImagePattern";
 
@@ -22,10 +23,22 @@ const SignUpPage = () => {
 
   const { signUp, isSigningUp } = useAuthStore();
 
-  const validateForm = () => {};
+  const validateForm = () => {
+    if (!formData.fullName.trim()) return toast.error("Full name is required");
+    if (!formData.email.trim()) return toast.error("Email is required");
+    if (!/\S+@\S+\.\S+/.test(formData.email))
+      return toast.error("Email is invalid");
+    if (!formData.password.trim()) return toast.error("Password is required");
+    if (formData.password.length < 6)
+      return toast.error("Password must be at least 6 characters long");
+    return true;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const success = validateForm();
+    if (success === true) signUp(formData);
   };
 
   return (
